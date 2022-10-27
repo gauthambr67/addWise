@@ -10,13 +10,13 @@ const adviceSchema = new Schema({
     type: String,
     required: true,
   },
-  professional_experience: {
-    type: Boolean,
-    default: false,
-    required: true,
-  },
   advice: {
     type: String,
+    required: true,
+  },
+  profExp: {
+    type: Boolean,
+    default: false,
     required: true,
   },
 

@@ -1,0 +1,27 @@
+<%- include('../partials/header')%>
+
+<section id="show-page">
+  <div>Title:</div>
+  <div><%= advice.title %></div>
+  <div>Category:</div>
+  <div><%= advice.category %></div>
+  <div>Professional Experience?</div>
+  <div><%= advice.profExp ? "Yes" : "Nope" %></div>
+  <div><h2>Advice:</h2></div>
+  <div><%= advice.advice %></div>
+</section>
+<br />
+<br />
+
+<h2>Comments</h2>
+<form
+  id="add-comment-form"
+  method="POST"
+  action="/advice/<%= advice._id %>/comments"
+>
+  <label>Comment:</label>
+  <textarea name="comment"></textarea>
+  <input type="submit" value="Add Comment" />
+</form>
+
+<%- include('../partials/footer') %>

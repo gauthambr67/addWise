@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/advice" method="POST">
+  <label>Title:</label>
+  <input type="text" name="title" />
+  <label>Category:</label>
+  <select name="category">
+    <option value="Coding">Coding</option>
+    <option value="Resume">Resume</option>
+    <option value="Interview">Interview</option>
+    <option value="Cooking">Cooking</option>
+    <option value="Travel">Travel</option>
+    <option value="Pets">Pets</option>
+  </select>
+  <label>Professional Experience?</label>
+  <input type="checkbox" name="profExp" checked />
+  <label>Advice:</label>
+  <input type="text" name="advice" />
+  <input type="submit" value="Add Advice" />
+</form>
+
+<%- include('../partials/footer') %>
