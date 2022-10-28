@@ -1,14 +1,16 @@
 <%- include('../partials/header')%>
 
 <section id="show-page">
-  <div>Title:</div>
+  <div><h3>Title:</h3></div>
   <div><%= advice.title %></div>
-  <div>Category:</div>
+  <div><h3>Category:</h3></div>
   <div><%= advice.category %></div>
-  <div>Professional Experience?</div>
+  <div><h3>Professional Experience?</h3></div>
   <div><%= advice.profExp ? "Yes" : "Nope" %></div>
-  <div><h2>Advice:</h2></div>
+  <div><h3>Advice:</h3></div>
   <div><%= advice.advice %></div>
+  <div><h3>Shared by:</h3></div>
+  <div><%= advice.userName %></div>
 </section>
 <br />
 <br />
@@ -19,7 +21,6 @@
   method="POST"
   action="/advice/<%= advice._id %>/comments"
 >
-  <label>Comment:</label>
   <textarea name="comment"></textarea>
   <input type="submit" value="Add Comment" />
 </form>

@@ -6,6 +6,7 @@ module.exports = {
   show,
   new: newAdvice,
   create,
+  update,
 };
 
 function index(req, res) {
@@ -39,6 +40,32 @@ function create(req, res) {
   advice.save(function (err) {
     if (err) return res.redirect("/advice/new");
     console.log(advice);
-    res.redirect(`/advice/${advice._id}`);
+    res.redirect("/advice");
   });
 }
+
+/*
+function deleteAdvice(req, res) {
+  const advice = new Advice();
+  advice.findByIdAndRemove({ _id: req.params.id });
+  res.redirect("/advice");
+}
+
+async function update(req, res) {
+  const advice = new Advice({
+    _id: req.params.id,
+    title: req.body.title,
+    category: req.body.category,
+    advice: req.body.advice,
+    profExp: req.body.profExp,
+    userName: req.body.userName,
+  });
+  await advice.updateOne(
+    { _id: req.params.id },
+    { $set: advice },
+    res.redirect("/advice")
+    //show(req.params.id)
+  );
+  await advice.save();
+}
+*/

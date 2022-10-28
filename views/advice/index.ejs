@@ -1,21 +1,24 @@
-<% include('../partials/header') %>
+<%- include('../partials/header') %>
 <table id="list">
   <thead>
     <tr>
       <th>Title</th>
       <th>Category</th>
+      <th>Advice</th>
+      <th>Advice shared by</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-    <% movies.forEach(function(a){ %>
+    <% advice.forEach(function(a){ %>
     <tr>
       <td><%= a.title %></td>
       <td><%= a.category %></td>
       <td><a href="/advice/<%= a._id%>">DETAILS</a></td>
+      <td><%= a.userName %></td>
     </tr>
     <% }); %>
   </tbody>
 </table>
 
-<%- include('.../partials/footer')%>
+<%- include('../partials/footer')%>

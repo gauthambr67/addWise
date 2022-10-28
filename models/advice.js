@@ -19,8 +19,10 @@ const adviceSchema = new Schema({
     default: false,
     required: true,
   },
-
-  timestamps: true,
+  userName: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("Advice", adviceSchema);
